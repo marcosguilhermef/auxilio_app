@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "603501486433",
+    "project_id": "auxilio-emergencial-666f7",
+    "storage_bucket": "auxilio-emergencial-666f7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:603501486433:android:07b0b1c2ab5387f1cc6520",
+        "android_client_info": {
+          "package_name": "com.origin.auxilio_emergencial"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "603501486433-u2gmoerntbuqfs975t6im13fim0vo4v9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgPVLVtyjHRBxfYU0EesvR7_6NME8IO9g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "603501486433-u2gmoerntbuqfs975t6im13fim0vo4v9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_main"
+    app:startDestination="@id/home"
+    >
+
+    <fragment
+        android:id="@+id/home"
+        android:name="com.origin.auxilio_emergencial.ui.home.home"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_home_to_consultar_cpf"
+            app:launchSingleTop="true"
+            app:destination="@id/navigationToConsultarCpf" />
+
+        <action
+            android:id="@+id/action_home_to_navigationToCalendario"
+            app:destination="@id/navigationToCalendario" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigationToConsultarCpf"
+        android:name="com.origin.auxilio_emergencial.ui.consultar_auxilio.ConsultarAuxilio"
+        android:label="Consultar Auxílio"
+        tools:layout="@layout/fragment_consultar_auxilio" >
+        <action
+            android:id="@+id/action_navigationToConsultarCpf_to_navigationToAuxilio"
+            app:launchSingleTop="true"
+            app:destination="@id/navigationToAuxilio" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigationToAuxilio"
+        android:name="com.origin.auxilio_emergencial.ui.auxilio.Auxilio"
+        android:label="Auxílio"
+        tools:layout="@layout/fragment_auxilio" >
+        <argument
+            android:name="Parcela"
+            app:launchSingleTop="true"
+            app:argType="com.origin.auxilio_emergencial.models.Parcela"/>
+        <action
+            android:name="Calendário"
+            android:id="@+id/action_navigationToAuxilio_to_navigationToParcelas"
+            app:destination="@id/navigationToParcelas" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigationToParcelas"
+        android:name="com.origin.auxilio_emergencial.ui.parcelas.parcelas"
+        android:label="Auxílio"
+        tools:layout="@layout/fragment_parcelas"
+        >
+        <argument
+            android:name="Parcela"
+            app:launchSingleTop="true"
+            app:argType="com.origin.auxilio_emergencial.models.Parcela"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigationToCalendario"
+        android:name="com.origin.auxilio_emergencial.ui.calendario.CalendarioPagamento"
+        android:label="Auxílio"
+        tools:layout="@layout/fragment_calendario_pagamento"
+        >
+    </fragment>
+
+</navigation>

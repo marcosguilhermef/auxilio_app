@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.auxilio.Auxilio">
+
+
+    <include
+        android:id="@+id/nao_ha_dados"
+        layout="@layout/nao_ha_dados"
+        android:visibility="invisible"/>
+
+    <include
+        android:id="@+id/infomacoes_auxilio"
+        layout="@layout/informacoes_auxilio"
+        android:visibility="invisible"/>
+
+</FrameLayout>

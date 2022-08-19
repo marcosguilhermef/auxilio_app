@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.home"
+    >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginHorizontal="20dp"
+                android:textStyle="bold"
+                android:textAlignment="gravity"
+                android:text="@string/consta_auxilio_emergencial"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginHorizontal="20dp"
+                android:text="@string/intrucoes"
+                />
+
+            <include android:id="@+id/consultar_auxilio" layout="@layout/consultar_auxilio"/>
+            <include android:id="@+id/calendario" layout="@layout/calendario_pagamento"/>
+            <include android:id="@+id/avaliar_app" layout="@layout/avaliar_app"/>
+            <include android:id="@+id/compartilhar_app" layout="@layout/compartilhar_app"/>
+
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

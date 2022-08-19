@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Auxílio Emergencial</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_home">Página inicial</string>
+    <string name="consta_auxilio_emergencial">Consultar Auxílio Emergencial</string>
+    <string name="intrucoes">
+        Tenha em mãos o número do seu NIS ou do CPF para fazer a consulta do auxílio emergencial, bolsa família ou auxílio Brasil.
+        Também é possível consultar parcelas já recebidas e se ainda há parcelas a receber.
+    </string>
+    <string name="cpf">CPF ou NIS</string>
+    <string name="pub_id">ca-app-pub-8817634033676287~2656263282</string>
+    <string name="banner_id">ca-app-pub-8817634033676287/1339962555</string>
+</resources>
