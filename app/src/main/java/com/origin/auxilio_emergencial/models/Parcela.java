@@ -3,20 +3,23 @@ package com.origin.auxilio_emergencial.models;
 import android.os.Parcelable;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.util.Log;
 
-public class Parcela implements Parcelable {
+import java.util.Date;
+
+public class Parcela implements Parcelable, Comparable<Parcela> {
     private int codigo;
     private String nome;
 
-    Double id;
-    String mesDisponibilizacao;
-    Beneficiario beneficiario;
-    ResponsavelAuxilioEmergencial responsavelAuxilioEmergencial;
-    Municipio municipio;
-    String situacaoAuxilioEmergencial;
-    String enquadramentoAuxilioEmergencial;
-    Float valor;
-    String numeroParcela;
+    private Double id;
+    private Date mesDisponibilizacao;
+    private Beneficiario beneficiario;
+    private ResponsavelAuxilioEmergencial responsavelAuxilioEmergencial;
+    private Municipio municipio;
+    private String situacaoAuxilioEmergencial;
+    private String enquadramentoAuxilioEmergencial;
+    private Float valor;
+    private String numeroParcela;
 
     private Parcela(int codigo, String nome){
         this.codigo = codigo;
@@ -62,11 +65,11 @@ public class Parcela implements Parcelable {
         this.id = id;
     }
 
-    public String getMesDisponibilizacao() {
+    public Date getMesDisponibilizacao() {
         return mesDisponibilizacao;
     }
 
-    public void setMesDisponibilizacao(String mesDisponibilizacao) {
+    public void setMesDisponibilizacao(Date mesDisponibilizacao) {
         this.mesDisponibilizacao = mesDisponibilizacao;
     }
 
@@ -123,7 +126,12 @@ public class Parcela implements Parcelable {
     }
 
     public void setNumeroParcela(String numeroParcela) {
-        this.numeroParcela = numeroParcela;
+        Log.i("TESTE: ",numeroParcela);
+        this.numeroParcela = numeroParcela+"00a";
     }
 
+    @Override
+    public int compareTo(Parcela p) {
+        return getMesDisponibilizacao().compareTo( p.getMesDisponibilizacao() );
+    }
 }

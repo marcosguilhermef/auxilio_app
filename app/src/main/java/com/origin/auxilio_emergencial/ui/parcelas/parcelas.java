@@ -8,13 +8,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.origin.auxilio_emergencial.R;
 import com.origin.auxilio_emergencial.databinding.FragmentParcelasBinding;
 import com.origin.auxilio_emergencial.models.Parcela;
 import com.origin.auxilio_emergencial.ui.adsFragment;
 import com.origin.auxilio_emergencial.utils.Analytics;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -31,7 +32,6 @@ public class parcelas extends Fragment {
     private ArrayList<Parcela> mParam1;
 
     private FragmentParcelasBinding databiding;
-
     public parcelas() {
         // Required empty public constructor
     }
@@ -71,9 +71,11 @@ public class parcelas extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         databiding = FragmentParcelasBinding.inflate( inflater, container, false );
+        Collections.sort( mParam1 );
         databiding.parcelas.setAdapter( new AuxilioAdapter( getActivity(), getContext(), mParam1 ) );
         return databiding.getRoot();
     }
+
 
     @Override
     public void onDestroy() {

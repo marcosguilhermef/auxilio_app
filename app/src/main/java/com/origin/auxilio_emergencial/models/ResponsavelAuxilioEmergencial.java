@@ -1,9 +1,9 @@
 package com.origin.auxilio_emergencial.models;
 
 public class ResponsavelAuxilioEmergencial {
-    String cpfFormatado;
-    String nis;
-    String nome;
+    private String cpfFormatado;
+    private String nis;
+    private String nome;
 
     public String getCpfFormatado() {
         return cpfFormatado;

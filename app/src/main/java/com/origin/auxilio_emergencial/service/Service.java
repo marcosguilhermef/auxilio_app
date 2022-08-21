@@ -2,9 +2,14 @@ package com.origin.auxilio_emergencial.service;
 
 import androidx.lifecycle.MutableLiveData;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.origin.auxilio_emergencial.models.Cpf;
+import com.origin.auxilio_emergencial.models.DateDeserializer;
+import com.origin.auxilio_emergencial.models.DateSerializer;
 import com.origin.auxilio_emergencial.models.Parcela;
 
+import java.util.Date;
 import java.util.List;
 
 import retrofit2.Call;
@@ -25,9 +30,15 @@ public class Service {
             MutableLiveData<Integer> erro,
             MutableLiveData<List<Parcela>> response
     ){
+
+        Gson gson = new GsonBuilder()
+               .registerTypeAdapter( Date.class, new DateSerializer())
+               .registerTypeAdapter( Date.class, new DateDeserializer() )
+               .create();
+
         retrofit =  new Retrofit
                 .Builder()
-                .addConverterFactory( GsonConverterFactory.create())
+                .addConverterFactory( GsonConverterFactory.create(gson))
                 .baseUrl("https://auxilio.mgjobs.cf/")
                 .build();
 
@@ -58,6 +69,7 @@ public class Service {
             @Override
             public void onFailure(Call<List<Parcela>> call, Throwable t) {
                 Service.this.erro.postValue(CodeError.REQUEST_ERROR);
+                t.printStackTrace();
             }
         } );
 

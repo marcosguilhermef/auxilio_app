@@ -1,12 +1,12 @@
 package com.origin.auxilio_emergencial.models;
 
 public class Municipio {
-    String codigoIBGE;
-    String nomeIBGE;
-    String codigoRegiao;
-    String nomeRegiao;
-    String pais;
-    Uf uf;
+    private String codigoIBGE;
+    private String nomeIBGE;
+    private String codigoRegiao;
+    private String nomeRegiao;
+    private String pais;
+    private Uf uf;
 
     public String getCodigoIBGE() {
         return codigoIBGE;

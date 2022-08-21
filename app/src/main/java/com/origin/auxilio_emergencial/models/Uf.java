@@ -1,8 +1,8 @@
 package com.origin.auxilio_emergencial.models;
 
 public class Uf {
-    String sigla;
-    String nome;
+    private String sigla;
+    private String nome;
 
     public String getSigla() {
         return sigla;

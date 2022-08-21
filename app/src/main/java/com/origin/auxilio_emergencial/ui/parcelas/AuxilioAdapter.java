@@ -16,6 +16,8 @@ import com.origin.auxilio_emergencial.R;
 
 import org.w3c.dom.Text;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 public class AuxilioAdapter extends BaseAdapter {
@@ -57,6 +59,10 @@ public class AuxilioAdapter extends BaseAdapter {
         view = layoutInflater.inflate(R.layout.parcela_layout, null);
         holder = new Holder();
 
+
+
+        SimpleDateFormat format = new SimpleDateFormat("MM/yyyy");
+
         TextView parcela = (TextView) view.findViewById(R.id.parcela);
         TextView valor = (TextView) view.findViewById(R.id.valor);
         TextView mes = (TextView) view.findViewById(R.id.mes);
@@ -64,7 +70,7 @@ public class AuxilioAdapter extends BaseAdapter {
         TextView situacao = (TextView) view.findViewById( R.id.situacao );
         parcela.setText(getItem(i).getNumeroParcela());
         valor.setText(String.valueOf(getItem(i).getValor()));
-        mes.setText(getItem(i).getMesDisponibilizacao());
+        mes.setText(format.format( getItem(i).getMesDisponibilizacao() ));
         enquadramento.setText(getItem(i).getEnquadramentoAuxilioEmergencial());
         situacao.setText( getItem(i).getSituacaoAuxilioEmergencial() );
         return view;
@@ -76,5 +82,7 @@ public class AuxilioAdapter extends BaseAdapter {
         TextView data;
         long id;
     }
+
+
 
 }

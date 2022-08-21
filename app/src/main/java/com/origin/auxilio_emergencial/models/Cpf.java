@@ -1,8 +1,8 @@
 package com.origin.auxilio_emergencial.models;
 
 public class Cpf {
-    String cpf;
-    String pagina;
+    private String cpf;
+    private String pagina;
 
     public Cpf(){
 
