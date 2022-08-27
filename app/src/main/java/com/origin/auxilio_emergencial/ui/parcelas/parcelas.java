@@ -57,7 +57,6 @@ public class parcelas extends Fragment {
     public void onStart() {
         super.onStart();
         Analytics.ScreenNameSend(getActivity().getTitle().toString(), getClass().getName());
-        adsFragment.destroy();
     }
 
     @Override
@@ -80,6 +79,5 @@ public class parcelas extends Fragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        adsFragment.call();
     }
 }

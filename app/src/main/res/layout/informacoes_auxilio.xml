@@ -50,6 +50,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:text="parcelas"
+                style="@style/button_vi"
                 app:layout_constraintTop_toBottomOf="@id/responsavel"
                 app:layout_constraintStart_toStartOf="parent"
                 />

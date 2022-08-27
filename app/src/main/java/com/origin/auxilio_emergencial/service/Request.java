@@ -14,4 +14,6 @@ import retrofit2.http.POST;
 public interface Request {
     @POST("api/auxilio-cpf")
     Call<List<Parcela>> getA(@Body Cpf id);
+    @POST("api/auxilio-cpf")
+    Call<String> getB(@Body Cpf id);
 }

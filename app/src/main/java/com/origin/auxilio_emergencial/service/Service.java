@@ -1,5 +1,7 @@
 package com.origin.auxilio_emergencial.service;
 
+import android.util.Log;
+
 import androidx.lifecycle.MutableLiveData;
 
 import com.google.gson.Gson;
@@ -67,8 +69,10 @@ public class Service {
             }
 
             @Override
-            public void onFailure(Call<List<Parcela>> call, Throwable t) {
+            public void onFailure(Call call, Throwable t) {
                 Service.this.erro.postValue(CodeError.REQUEST_ERROR);
+                Log.i("ERRRO", t.getMessage());
+                Log.i("ERRRO", String.valueOf( call.request().hashCode() ) );
                 t.printStackTrace();
             }
         } );
