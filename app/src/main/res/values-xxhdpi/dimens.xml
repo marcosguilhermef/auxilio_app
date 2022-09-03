@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="pequeno">32dp</dimen>
+    <dimen name="medio">60dp</dimen>
+    <dimen name="grande">90dp</dimen>
+    <dimen name="titulo">19dp</dimen>
+    <dimen name="descricao">17dp</dimen>
+    <dimen name="img_h">-1px</dimen>
+    <dimen name="img_w">50dp</dimen>
+    <dimen name="img_pad">-1px</dimen>
+    <dimen name="card_margin_w">10dp</dimen>
+    <dimen name="card_margin_h">10dp</dimen>
+    <dimen name="banner_dis_t">15dp</dimen>
+    <dimen name="banner_dis_b">3dp</dimen>
+</resources>

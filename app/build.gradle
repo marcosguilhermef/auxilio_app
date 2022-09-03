@@ -12,7 +12,7 @@ android {
         applicationId "com.origin.auxilio_emergencial"
         minSdk 21
         targetSdk 32
-        versionCode 16
+        versionCode 21
         versionName "1.$versionCode"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"

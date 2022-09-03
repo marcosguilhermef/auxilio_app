@@ -20,6 +20,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="10dp"
                 android:layout_marginHorizontal="20dp"
+                android:textSize="@dimen/titulo"
                 android:textStyle="bold"
                 android:textAlignment="gravity"
                 android:text="@string/consta_auxilio_emergencial"
@@ -29,6 +30,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:layout_marginHorizontal="20dp"
+                android:textSize="@dimen/descricao"
                 android:text="@string/intrucoes"
                 />
 

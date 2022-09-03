@@ -12,8 +12,8 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         android:tag="Título"
-        android:layout_marginHorizontal="10dp"
-        android:layout_marginVertical="10dp"
+        android:layout_marginHorizontal="@dimen/card_margin_w"
+        android:layout_marginVertical="@dimen/card_margin_h"
         app:cardCornerRadius="15dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -23,10 +23,10 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="@dimen/img_w"
+                android:layout_height="@dimen/img_h"
+                android:padding="@dimen/img_pad"
                 android:src="@drawable/compartilhar"
-                android:padding="15dp"
                 />
             <LinearLayout
                 android:layout_width="match_parent"
@@ -39,6 +39,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Compartilhar app"
+                    android:textSize="@dimen/titulo"
                     android:textAppearance="?attr/textAppearanceHeadline6"
                     />
                 <TextView
@@ -46,6 +47,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="0dp"
                     android:text="Gostou do app? Que tal compartilhar com os seus amigos para que mais possoas acessem 😀."
+                    android:textSize="@dimen/descricao"
                     android:textAppearance="?attr/textAppearanceBody2"
                     android:textColor="?android:attr/textColorSecondary"
                     />

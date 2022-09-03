@@ -31,9 +31,13 @@ public class adsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentAdsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+        configureBanner();
+        return root;
+    }
+
+    public void configureBanner(){
         ads = new AdMob(getActivity());
         ads.bannerAds(UNIT, binding.adViewF);
-        return root;
     }
 
     public static void destroy(){

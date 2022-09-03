@@ -46,6 +46,12 @@ public class AdMob implements AdMobService {
 
     }
 
+    public void nativeAds(@NotNull String unit, @NonNull AdView adResource){
+        adResource.setVisibility(View.VISIBLE);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adResource.loadAd(adRequest);
+    }
+
     @Override
     public void initializationAds(@NotNull String unit) {
         final AppOpenAd appOpenAd = null;
