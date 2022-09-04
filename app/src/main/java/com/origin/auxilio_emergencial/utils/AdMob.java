@@ -7,34 +7,52 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
 
+import com.google.android.ads.mediationtestsuite.MediationTestSuite;
 import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.FullScreenContentCallback;
 import com.google.android.gms.ads.LoadAdError;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.RequestConfiguration;
 import com.google.android.gms.ads.appopen.AppOpenAd;
 import com.google.android.gms.ads.interstitial.InterstitialAd;
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
+import com.origin.auxilio_emergencial.MainActivity;
+import com.origin.auxilio_emergencial.R;
 
 import org.jetbrains.annotations.NotNull;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class AdMob implements AdMobService {
     private AdView adView;
     private Activity activity;
     private InterstitialAd mInterstitialAd;
     private AppOpenAd appOpenAd = null;
+    private final Boolean isTest;
 
     public AdMob(FragmentActivity activity) {
         this.activity = activity;
+        isTest =  Boolean.parseBoolean( activity.getString( R.string.isTest));
     }
 
     public AdMob(Activity activity) {
         this.activity = activity;
+        isTest =  Boolean.parseBoolean( activity.getString( R.string.isTest));
     }
 
 
     @Override
     public void bannerAds(@NotNull String unit, @NonNull AdView adResource) {
+        Log.i( "TESTE_BOOLEAN",  isTest.toString());
+
+        if(isTest){
+            activeDeviceTest();
+        }
+
+
         try {
             adResource.setVisibility(View.VISIBLE);
             AdRequest adRequest = new AdRequest.Builder().build();
@@ -44,6 +62,14 @@ public class AdMob implements AdMobService {
             e.printStackTrace();
         }
 
+    }
+
+    public void activeDeviceTest(){
+        List<String> testDeviceIds = Arrays.asList("33BE2250B43518CCDA7DE426D04EE231");
+        RequestConfiguration configuration =
+                new RequestConfiguration.Builder().setTestDeviceIds(testDeviceIds).build();
+
+        MobileAds.setRequestConfiguration(configuration);
     }
 
     public void nativeAds(@NotNull String unit, @NonNull AdView adResource){

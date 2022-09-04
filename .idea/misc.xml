@@ -31,7 +31,7 @@
         <entry key="app/src/main/res/layout/fragment_auxilio.xml" value="0.19427083333333334" />
         <entry key="app/src/main/res/layout/fragment_calendario_pagamento.xml" value="0.5416336241078509" />
         <entry key="app/src/main/res/layout/fragment_consultar_auxilio.xml" value="0.19947916666666668" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_parcelas.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/info_status.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/informacoes_auxilio.xml" value="0.33" />
@@ -40,6 +40,7 @@
         <entry key="app/src/main/res/layout/parcelas_table.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/parcelas_vazias.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/responsavel_card.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/xml/network_security_config.xml" value="0.12268518518518519" />
       </map>
     </option>
   </component>

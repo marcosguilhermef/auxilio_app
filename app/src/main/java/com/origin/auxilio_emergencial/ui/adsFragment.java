@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
 
+import com.google.android.ads.mediationtestsuite.MediationTestSuite;
+import com.origin.auxilio_emergencial.MainActivity;
 import com.origin.auxilio_emergencial.R;
 import com.origin.auxilio_emergencial.databinding.FragmentAdsBinding;
 import com.origin.auxilio_emergencial.utils.AdMob;

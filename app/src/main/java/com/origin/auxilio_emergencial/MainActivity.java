@@ -9,8 +9,12 @@ import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import com.facebook.ads.AdSettings;
-import com.facebook.ads.AudienceNetworkAds;
+//import com.facebook.ads.AdSettings;
+//import com.facebook.ads.AudienceNetworkAds;
+import com.facebook.FacebookSdk;
+import com.facebook.LoggingBehavior;
+import com.google.android.ads.mediationtestsuite.MediationTestSuite;
+import com.google.android.gms.ads.MobileAds;
 import com.origin.auxilio_emergencial.databinding.ActivityMainBinding;
 import com.origin.auxilio_emergencial.ui.adsFragment;
 import com.origin.auxilio_emergencial.utils.Analytics;
@@ -44,10 +48,12 @@ public class MainActivity extends AppCompatActivity {
                 .add(R.id.ads_fragment_container, adsFragment.class, null)
                 .commit();
 
-        AudienceNetworkInitializeHelper.initialize(this);
-
-        AdSettings.setIntegrationErrorMode(INTEGRATION_ERROR_CRASH_DEBUG_MODE);
-
+        //MobileAds.initialize( MainActivity.this );
+        //MediationTestSuite.launch(MainActivity.this);
+        //FacebookSdk.setIsDebugEnabled(true);
+        //FacebookSdk.addLoggingBehavior( LoggingBehavior.APP_EVENTS);
+        //AudienceNetworkInitializeHelper.initialize(this);
+        //AdSettings.setIntegrationErrorMode(INTEGRATION_ERROR_CRASH_DEBUG_MODE);
     }
 
     @Override

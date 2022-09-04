@@ -12,7 +12,7 @@ android {
         applicationId "com.origin.auxilio_emergencial"
         minSdk 21
         targetSdk 32
-        versionCode 21
+        versionCode 22
         versionName "1.$versionCode"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -65,9 +65,10 @@ dependencies {
     implementation 'com.google.ads.mediation:unity:4.2.1.1'
     implementation 'com.google.ads.mediation:applovin:11.4.4.0'
     implementation 'com.google.ads.mediation:facebook:6.11.0.1'
+    implementation 'com.google.android.ads:mediation-test-suite:3.0.0'
 
     implementation 'androidx.annotation:annotation:1.0.0'
-    implementation 'com.facebook.android:audience-network-sdk:6.+'
+    //implementation 'com.facebook.android:audience-network-sdk:6.+'
 
 
     implementation 'com.facebook.android:facebook-android-sdk:[8,9)'
