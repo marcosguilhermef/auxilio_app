@@ -33,6 +33,7 @@ public class adsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentAdsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+        root.setBackgroundColor( getActivity().getResources().getColor( R.color.cinza ) );
         configureBanner();
         return root;
     }

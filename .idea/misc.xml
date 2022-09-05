@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../../layout/custom_preview.xml" value="0.20729166666666668" />
         <entry key="app/src/main/res/drawable-night/border.xml" value="0.215625" />
         <entry key="app/src/main/res/drawable-nigth/border.xml" value="0.2140625" />
         <entry key="app/src/main/res/drawable/border.xml" value="0.371875" />
@@ -21,7 +22,7 @@
         <entry key="app/src/main/res/layout-sw600dp/fragment_ads.xml" value="0.101171875" />
         <entry key="app/src/main/res/layout-sw600dp/layout.xml" value="0.101171875" />
         <entry key="app/src/main/res/layout-sw720dp/fragment_ads.xml" value="0.101171875" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.15" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="app/src/main/res/layout/avaliar_app.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/layout/beneficiario_card.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/calendario_pagamento.xml" value="0.19947916666666668" />

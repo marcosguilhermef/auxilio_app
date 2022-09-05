@@ -55,6 +55,7 @@ public class AdMob implements AdMobService {
 
         try {
             adResource.setVisibility(View.VISIBLE);
+            adResource.setBackgroundColor(  activity.getResources().getColor( R.color.cinza )  );
             AdRequest adRequest = new AdRequest.Builder().build();
             adResource.loadAd(adRequest);
         } catch (Exception e) {

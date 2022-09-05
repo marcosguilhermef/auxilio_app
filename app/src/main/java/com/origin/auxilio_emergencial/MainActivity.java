@@ -20,6 +20,7 @@ import com.origin.auxilio_emergencial.ui.adsFragment;
 import com.origin.auxilio_emergencial.utils.Analytics;
 
 import android.os.Bundle;
+import android.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private NavHostFragment navHostFragment;
     private AppBarConfiguration appBarConfiguration;
     public Analytics ans;
+    private AppBarConfiguration mAppBarConfiguration;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +39,11 @@ public class MainActivity extends AppCompatActivity {
 
         navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
 
+
+        setSupportActionBar(binding.toolbar);
+
         appBarConfiguration = new AppBarConfiguration.Builder(getNavController().getGraph()).build();
+
 
         NavigationUI.setupActionBarWithNavController(this,getNavController(),appBarConfiguration);
 
