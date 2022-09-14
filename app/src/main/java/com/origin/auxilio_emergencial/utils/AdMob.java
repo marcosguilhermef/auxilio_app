@@ -3,13 +3,16 @@ package com.origin.auxilio_emergencial.utils;
 import android.app.Activity;
 import android.util.Log;
 import android.view.View;
+import android.widget.FrameLayout;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
 
+import com.facebook.ads.Ad;
 import com.google.android.ads.mediationtestsuite.MediationTestSuite;
 import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.FullScreenContentCallback;
 import com.google.android.gms.ads.LoadAdError;
@@ -44,7 +47,6 @@ public class AdMob implements AdMobService {
     }
 
 
-    @Override
     public void bannerAds(@NotNull String unit, @NonNull AdView adResource) {
         Log.i( "TESTE_BOOLEAN",  isTest.toString());
 
@@ -56,8 +58,35 @@ public class AdMob implements AdMobService {
         try {
             adResource.setVisibility(View.VISIBLE);
             adResource.setBackgroundColor(  activity.getResources().getColor( R.color.cinza )  );
+            //adResource.setAdSize( AdSize.SMART_BANNER );
+            //adResource.setAdUnitId( unit );
+
             AdRequest adRequest = new AdRequest.Builder().build();
             adResource.loadAd(adRequest);
+        } catch (Exception e) {
+            Log.i("FALHA:", "------------------------------------------------------------------------------------------------------------------------");
+            e.printStackTrace();
+        }
+
+    }
+
+    public void bannerAds(@NotNull String unit, FrameLayout frameLayout) {
+        Log.i( "TESTE_BOOLEAN",  isTest.toString());
+
+        if(isTest){
+            activeDeviceTest();
+        }
+
+        try {
+            AdView adResource = new AdView( activity.getApplicationContext() );
+            adResource.setVisibility(View.VISIBLE);
+            adResource.setBackgroundColor(  activity.getResources().getColor( R.color.cinza )  );
+            adResource.setAdSize( AdSize.SMART_BANNER );
+            adResource.setAdUnitId( unit );
+            AdRequest adRequest = new AdRequest.Builder().build();
+            adResource.loadAd(adRequest);
+
+            frameLayout.addView( adResource );
         } catch (Exception e) {
             Log.i("FALHA:", "------------------------------------------------------------------------------------------------------------------------");
             e.printStackTrace();

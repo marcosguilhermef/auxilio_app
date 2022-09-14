@@ -2,25 +2,22 @@ package com.origin.auxilio_emergencial;
 
 import static com.facebook.ads.AdSettings.IntegrationErrorMode.INTEGRATION_ERROR_CRASH_DEBUG_MODE;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
-
-//import com.facebook.ads.AdSettings;
-//import com.facebook.ads.AudienceNetworkAds;
-import com.facebook.FacebookSdk;
-import com.facebook.LoggingBehavior;
-import com.google.android.ads.mediationtestsuite.MediationTestSuite;
-import com.google.android.gms.ads.MobileAds;
 import com.origin.auxilio_emergencial.databinding.ActivityMainBinding;
 import com.origin.auxilio_emergencial.ui.adsFragment;
+import com.origin.auxilio_emergencial.utils.Ads;
 import com.origin.auxilio_emergencial.utils.Analytics;
+import com.origin.auxilio_emergencial.utils.MainThreadExecutor;
+import com.origin.auxilio_emergencial.utils.RemoteConfig;
 
+import android.os.Build;
 import android.os.Bundle;
-import android.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     public Analytics ans;
     private AppBarConfiguration mAppBarConfiguration;
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
@@ -54,12 +52,12 @@ public class MainActivity extends AppCompatActivity {
                 .add(R.id.ads_fragment_container, adsFragment.class, null)
                 .commit();
 
-        //MobileAds.initialize( MainActivity.this );
-        //MediationTestSuite.launch(MainActivity.this);
-        //FacebookSdk.setIsDebugEnabled(true);
-        //FacebookSdk.addLoggingBehavior( LoggingBehavior.APP_EVENTS);
-        //AudienceNetworkInitializeHelper.initialize(this);
-        //AdSettings.setIntegrationErrorMode(INTEGRATION_ERROR_CRASH_DEBUG_MODE);
+
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.P){
+            new RemoteConfig(this);
+        }else{
+            new RemoteConfig(this, new MainThreadExecutor() );
+        }
     }
 
     @Override
